@@ -1,3 +1,179 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg) translateY(6px);
+  }
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-45deg) translateY(-6px);
+  }
+}
+@keyframes inv-rotate {
+  0% {
+    transform: rotate(45deg) translateY(6px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+}
+@keyframes inv-rotate2 {
+  0% {
+    transform: rotate(-45deg) translateY(-6px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+}
+@keyframes anime-menu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.menu-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: aqua;
+}
+.menu-box__logo {
+  width: 250px;
+  height: 16px;
+  margin-top: 16px;
+}
+.menu-box__nav li {
+  display: inline-block;
+  padding: 0px 10px 0 10px;
+}
+.menu-box__nav a {
+  text-decoration: none;
+}
+
+#burger {
+  display: none;
+  cursor: pointer;
+}
+#burger li {
+  list-style: none;
+}
+
+/*  bouton burger  */
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+}
+.bar--hide {
+  display: none;
+}
+
+.bar1--remove {
+  animation: inv-rotate linear 0.5s forwards;
+}
+.bar1--move {
+  animation: rotate linear 0.5s forwards;
+}
+
+.bar3--remove {
+  animation: inv-rotate2 linear 0.5s forwards;
+}
+.bar3--move {
+  animation: rotate2 linear 0.5s forwards;
+}
+
+.menu-items {
+  display: none;
+  background-color: red;
+  height: 100vh;
+  opacity: 0;
+  animation: anime-menu 1.5s linear forwards;
+}
+.menu-items__box {
+  width: 80%;
+  margin: auto;
+  background-color: chartreuse;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-items__nav {
+  padding-top: 150px;
+  text-align: center;
+  background-color: darkslateblue;
+}
+.menu-items ul {
+  background-color: orange;
+  padding: 0px;
+}
+.menu-items li {
+  list-style: none;
+  background-color: blue;
+}
+.menu-items a {
+  text-decoration: none;
+  color: white;
+  font-size: 3em;
+}
+
+.menu-items.show-menu {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .menu-box__nav {
+    display: none;
+  }
+  #burger {
+    display: flex;
+  }
+  .menu-box__logo {
+    width: 150px;
+    height: 10px;
+    margin-top: 25px;
+  }
+  .menu-bas {
+    flex-direction: column;
+  }
+}
+.menu-bas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: aqua;
+  border-top: 1px solid black;
+  text-align: center;
+}
+.menu-bas ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+}
+.menu-bas li {
+  display: inline-block;
+  padding: 0px 30px 0 30px;
+}
+.menu-bas a {
+  text-decoration: none;
+}
+
+@media (max-width: 599px) {
+  .menu-bas ul {
+    flex-direction: column;
+  }
+  .menu-bas li {
+    padding-top: 15px;
+  }
+}
 h1 {
   color: blue;
 }

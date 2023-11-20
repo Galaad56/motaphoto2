@@ -1,0 +1,38 @@
+.menu-bas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: aqua;
+    border-top: 1px solid black;
+    text-align: center;
+
+    & ul{
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+    }
+
+    & li{
+        display: inline-block;
+        padding: 0px 30px 0 30px;
+    }
+
+    & a{
+        text-decoration: none;
+    }
+
+}
+
+//media query gestion menu moblie
+@media (max-width: 599px) {
+   
+  .menu-bas ul{
+    flex-direction: column;
+  }
+
+  .menu-bas li{
+    padding-top: 15px;
+  }
+  
+  }
+       

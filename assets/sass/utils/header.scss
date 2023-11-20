@@ -1,0 +1,181 @@
+        // keyframes rotation menu burger
+        @keyframes rotate {
+          0% {
+              transform: rotate(0deg);
+                
+          }
+          100% {
+              transform: rotate(45deg)translateY(6px);
+          }
+        }
+          
+        @keyframes rotate2 {
+          0% {
+                transform: rotate(0deg);
+          }
+          100% {
+              transform: rotate(-45deg)translateY(-6px);
+          }
+        }
+          
+        @keyframes inv-rotate {
+          0% {
+              transform: rotate(45deg) translateY(6px) ;
+                
+            }
+            100% {
+              transform: rotate(0deg)translateY(0px);
+          }
+        }
+          
+        @keyframes inv-rotate2 {
+          0% {
+              transform: rotate(-45deg) translateY(-6px);
+          }
+          100% {
+               transform: rotate(0deg)translateY(0px);
+          }
+        }
+
+     //fade in sur menu
+     @keyframes anime-menu {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+  }
+          
+    
+.menu-box{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    background-color: aqua;
+
+    &__logo{
+        width: 250px;
+        height: 16px;
+        margin-top: 16px;
+    }
+
+    &__nav li{
+        display: inline-block;
+        padding: 0px 10px 0 10px;
+    }
+    &__nav a{
+        text-decoration: none;
+    }
+}
+
+#burger{
+    display: none;
+    cursor: pointer;
+    & li {
+        list-style: none;
+    }
+}
+
+ /*  bouton burger  */
+ .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+  
+    &--hide{
+      display:none;
+    }
+  }
+  
+  .bar1{
+    &--remove{
+      animation: inv-rotate linear 0.5s forwards;
+    }
+  
+    &--move{
+      animation: rotate linear 0.5s forwards; 
+    }
+  }
+  
+  .bar3{
+    &--remove{
+      animation: inv-rotate2 linear 0.5s forwards;
+    }
+  
+    &--move{
+      animation: rotate2 linear 0.5s forwards; 
+    }
+  }
+
+  .menu-items {
+    display: none;
+    background-color:red;
+    height: 100vh;
+    opacity: 0; 
+    animation: anime-menu 1.5s linear forwards;
+
+    &__box{
+      width: 80%;
+      margin:auto;
+      background-color: chartreuse;
+      display:flex;
+      //flex-direction: row;
+      //justify-content: center;
+      //padding-top: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__nav{
+      padding-top: 150px;
+      text-align: center; 
+      background-color: darkslateblue;
+    }
+    & ul {
+      background-color:orange;
+      padding: 0px;
+      //display: flex;
+      //flex-direction: column;
+      //align-items: center;
+
+    }
+
+    & li {
+      list-style: none;
+      background-color:blue;
+    }
+
+    & a {
+      text-decoration: none;
+      color: white;
+      font-size: 3em;
+    }
+
+  }
+
+  .menu-items.show-menu {
+    display: block;
+  }
+  
+
+//media query gestion menu moblie
+  @media (max-width: 600px) {
+    .menu-box__nav{
+      display:none;
+    }
+    #burger{
+      display: flex;
+    }
+    .menu-box__logo{
+      width: 150px;
+      height: 10px;
+      margin-top: 25px;  
+  }
+  .menu-bas{
+    flex-direction: column;
+  }
+  
+  }
