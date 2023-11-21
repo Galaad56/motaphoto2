@@ -38,11 +38,14 @@
     opacity: 1;
   }
 }
+body {
+  font-family: "space mono";
+}
+
 .menu-box {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: aqua;
 }
 .menu-box__logo {
   width: 250px;
@@ -55,6 +58,7 @@
 }
 .menu-box__nav a {
   text-decoration: none;
+  color: black;
 }
 
 #burger {
@@ -100,7 +104,6 @@
 .menu-items__box {
   width: 80%;
   margin: auto;
-  background-color: chartreuse;
   display: flex;
   display: flex;
   align-items: center;
@@ -109,20 +112,21 @@
 .menu-items__nav {
   padding-top: 150px;
   text-align: center;
-  background-color: darkslateblue;
 }
 .menu-items ul {
-  background-color: orange;
   padding: 0px;
 }
 .menu-items li {
   list-style: none;
-  background-color: blue;
 }
 .menu-items a {
   text-decoration: none;
   color: white;
   font-size: 3em;
+}
+
+a:hover {
+  text-shadow: 0 0 10px rgba(235, 14, 14, 0.9);
 }
 
 .menu-items.show-menu {
@@ -149,7 +153,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: aqua;
   border-top: 1px solid black;
   text-align: center;
 }
@@ -164,6 +167,7 @@
 }
 .menu-bas a {
   text-decoration: none;
+  color: black;
 }
 
 @media (max-width: 599px) {
@@ -174,6 +178,56 @@
     padding-top: 15px;
   }
 }
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 0px 20px 20px 20px;
+  border: 1px solid #888;
+  width: 350px; /* Could be more or less, depending on screen size */
+  overflow: hidden;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#img_modale {
+  width: 140%;
+  position: relative;
+  left: -50px;
+  margin-top: 10px;
+}
+
+input, textarea {
+  border-radius: 5px;
+}
+
 h1 {
   color: blue;
 }

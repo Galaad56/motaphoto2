@@ -47,12 +47,16 @@
       }
   }
           
-    
+body{
+  font-family: "space mono";
+}
+  
+
 .menu-box{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
-    background-color: aqua;
+    //background-color: aqua;
 
     &__logo{
         width: 250px;
@@ -66,6 +70,7 @@
     }
     &__nav a{
         text-decoration: none;
+        color:black;
     }
 }
 
@@ -119,11 +124,7 @@
     &__box{
       width: 80%;
       margin:auto;
-      background-color: chartreuse;
       display:flex;
-      //flex-direction: row;
-      //justify-content: center;
-      //padding-top: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -132,20 +133,13 @@
     &__nav{
       padding-top: 150px;
       text-align: center; 
-      background-color: darkslateblue;
     }
     & ul {
-      background-color:orange;
       padding: 0px;
-      //display: flex;
-      //flex-direction: column;
-      //align-items: center;
-
     }
 
     & li {
       list-style: none;
-      background-color:blue;
     }
 
     & a {
@@ -153,8 +147,11 @@
       color: white;
       font-size: 3em;
     }
-
   }
+  a:hover {
+    text-shadow: 0 0 10px rgba(235, 14, 14, 0.9); 
+  }
+ 
 
   .menu-items.show-menu {
     display: block;
