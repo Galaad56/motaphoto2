@@ -16,9 +16,9 @@
           //wp_nav_menu(['theme_location'=>'menu_footer']);
     ?>
        </footer>
-       <?php wp_head(); ?>
-       <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/script.js';?>"></script>
-       <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/script_menu.js';?>"></script>
+       <?php wp_footer(); ?>
+       <!-- <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/script.js';?>"></script>
+       <script src="<?php echo get_stylesheet_directory_uri() . '/assets/js/script_menu.js';?>"></script> -->
     
     </body>
 </html>

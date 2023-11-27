@@ -59,6 +59,10 @@ body {
 .menu-box__nav a {
   text-decoration: none;
   color: black;
+  transition: text-shadow 1s ease;
+}
+.menu-box__nav a:hover {
+  text-shadow: 0 0 10px rgba(235, 14, 14, 0.9);
 }
 
 #burger {
@@ -120,13 +124,13 @@ body {
   list-style: none;
 }
 .menu-items a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   font-size: 3em;
+  transition: text-shadow 1s ease;
 }
-
-a:hover {
-  text-shadow: 0 0 10px rgba(235, 14, 14, 0.9);
+.menu-items a:hover {
+  text-shadow: 0 0 20px black;
 }
 
 .menu-items.show-menu {
@@ -168,6 +172,10 @@ a:hover {
 .menu-bas a {
   text-decoration: none;
   color: black;
+  transition: text-shadow 1s ease;
+}
+.menu-bas a:hover {
+  text-shadow: 0 0 10px rgba(235, 14, 14, 0.9);
 }
 
 @media (max-width: 599px) {
@@ -202,6 +210,11 @@ a:hover {
   overflow: hidden;
 }
 
+.modal-content form {
+  width: 50%;
+  padding-left: 87px;
+}
+
 /* The Close Button */
 .close {
   color: #aaa;
@@ -226,6 +239,25 @@ a:hover {
 
 input, textarea {
   border-radius: 5px;
+  width: 100%;
+  border: 1px solid #c4c4c4;
+}
+
+#conteneur_btn p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-content label {
+  font-size: small;
+}
+
+#btn_1 {
+  width: 100%;
+  border-radius: 0px;
+  border: 1px solid #c4c4c4;
+  background-color: #c4c4c4;
 }
 
 h1 {

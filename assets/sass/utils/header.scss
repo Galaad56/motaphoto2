@@ -71,7 +71,12 @@ body{
     &__nav a{
         text-decoration: none;
         color:black;
+        transition: text-shadow 1s ease;
     }
+
+    &__nav a:hover{
+      text-shadow: 0 0 10px rgba(235, 14, 14, 0.9);
+  }
 }
 
 #burger{
@@ -143,15 +148,17 @@ body{
     }
 
     & a {
-      text-decoration: none;
       color: white;
+      text-decoration: none;
       font-size: 3em;
+      transition: text-shadow 1s ease;
+    }
+
+    & a:hover{
+      text-shadow: 0 0 20px black;
     }
   }
-  a:hover {
-    text-shadow: 0 0 10px rgba(235, 14, 14, 0.9); 
-  }
- 
+   
 
   .menu-items.show-menu {
     display: block;

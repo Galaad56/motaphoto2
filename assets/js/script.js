@@ -14,13 +14,15 @@ var link = document.getElementById("menu-item-38");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+//btn.onclick = function() {
+    //modal.style.display = "block";
+//}
 
-link.onclick = function() {
+link.addEventListener("click",(e)=>{
+    e.preventDefault()
     modal.style.display = "block";
-}
+})
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
