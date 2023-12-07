@@ -1,0 +1,119 @@
+
+.single-section{
+    width: 80%;
+    margin:auto;
+}
+
+.single-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#column1{
+    display: flex;
+    flex-direction: column;
+
+
+    justify-content: flex-end;
+    width:50%;
+    //background-color: blueviolet;
+    margin-right: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+#column1 p{
+    //background-color: aqua;
+    margin: 0%;
+}
+#column1 h2{
+    width:30%;
+}
+
+#column2{
+   width: 50%;
+   //margin-right:10px;
+    //background-color: green;
+
+}
+
+#column2 img{
+    width: 100%;
+    height: auto;  
+    //object-fit:cover ;
+} 
+
+.titre_photo{
+    font-size: 3em;
+    font-family: "space mono";
+    font-weight: 300;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+#column1 p{
+  margin-top: 10px;
+} 
+
+#container-contact{
+    display: flex;
+    flex-direction: ligne;
+}
+
+//gestion bouton contact et lien vers suivant-précédent
+
+.container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-bottom: 1px solid black;
+
+    &__contact{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.btn{
+    height: 50px;
+    width: 270px;
+    padding: 8px 15px 8px 15px;
+    border-radius: 2px;
+    border: none;
+    background-color:#d8d8d8 ;
+    font-family: "space mono";
+    cursor: pointer;
+}
+#myBtn {
+    margin-left: 50px;
+}
+
+//gestion miniatures images suivante et précédente
+
+.container__fleche__precedent{
+    cursor: pointer;
+}
+
+.container__fleche__suivant{
+    cursor: pointer;
+}
+
+#img-precedent{
+    position:relative;
+    opacity: 1;
+}
+
+
+#img-suivant{
+   /*  position: absolute;
+    top: 0px;
+    left:0px; */
+    opacity: 1;
+}
+
+
+

@@ -55,8 +55,11 @@ body{
 .menu-box{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:space-between;
+    width: 80%;
+    margin:auto;
     //background-color: aqua;
+  
 
     &__logo{
         width: 250px;

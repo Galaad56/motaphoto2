@@ -1,0 +1,31 @@
+.overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.5em;
+
+    & a{
+        color: white;
+    }
+
+    & i{
+        transition: transform 0.3s ease; 
+    }
+
+    &  i:hover {
+        transform: scale(1.2); /* Échelle au survol */
+    }
+}
+
+
+
+.icon-full{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.icon-eye{
+    text-align:center;
+}
+
