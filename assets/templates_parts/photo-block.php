@@ -23,44 +23,9 @@
         if ( $query->have_posts() ) {
             while ( $query->have_posts() ) {
                 $query->the_post();
-                ?>
-                <!-- <div class="single-photo"> -->
-                    <div class="photo-container">
-                        <div class="photo-content">
-                            <?php the_post_thumbnail(); ?>
-                        </div>
-                        <div class="overlay">
-                            
-                            <div class="icon-full">
-                                <i class="fa-solid fa-expand"></i>
-                            </div>
-                           
-                            <div class="icon-eye">
-                                <a href="<?php the_permalink(); ?>">
-                                    <i class="fa-regular fa-eye"></i>
-                                </a>
-                            </div>
-
-                            <div class="infos-photo">
-                                <p id="reference">Référence: <span id="reference_span"> <?php echo get_post_meta(get_the_ID(), 'reference', true); ?></span></p>
-                                <?php
-                                    // Récupérez les termes de la taxonomie "categorie" associés à l'article
-                                    $cats = get_the_terms(get_the_ID(), 'category');
-
-                                    // Vérifiez si des termes existent
-                                    if ($cats && !is_wp_error($cats)) {
-                                        echo '<p>';
-                                        // Parcourez les termes et affichez-les
-                                        foreach ($cats as $cat) {
-                                            echo esc_html($cat->name); // Utilisez esc_html pour échapper le contenu
-                                    }
-                                        echo '</p>';
-                                    }?>
-                           </div>
-                        </div>
-                    </div>
-                <!-- </div> -->
-        <?php
+            
+              get_template_part('assets/templates_parts/overlay');     
+        
             }
         }
 

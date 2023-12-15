@@ -2,6 +2,7 @@
 .single-section{
     width: 80%;
     margin:auto;
+    margin-top: 50px;
 }
 
 .single-container{
@@ -56,14 +57,11 @@
   margin-top: 10px;
 } 
 
-#container-contact{
-    display: flex;
-    flex-direction: ligne;
-}
 
 //gestion bouton contact et lien vers suivant-précédent
 
 .container{
+    height: 118px;
     width: 100%;
     margin: auto;
     display: flex;
@@ -87,13 +85,26 @@
     background-color:#d8d8d8 ;
     font-family: "space mono";
     cursor: pointer;
+    transition: background-color 0.5s, color 0.5s; 
 }
+.btn:hover{
+        background-color: #000; /* Fond noir au survol */
+        color: #fff; /* Texte blanc au survol */
+}
+
 #myBtn {
     margin-left: 50px;
 }
 
 //gestion miniatures images suivante et précédente
-
+.container__mini{
+    position: relative;
+}
+.container__fleche{
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+}
 .container__fleche__precedent{
     cursor: pointer;
 }
@@ -103,17 +114,69 @@
 }
 
 #img-precedent{
-    position:relative;
+    height: 70%;
     opacity: 1;
 }
-
 
 #img-suivant{
-   /*  position: absolute;
+   position: absolute;
+    height: 70%;
     top: 0px;
-    left:0px; */
-    opacity: 1;
+    left:0px; 
+    opacity: 0;
+}
+
+#img-precedent img{
+    height: 100%;
+    width: auto;
+}
+
+#img-suivant img{
+    height: 100%;
+    width: auto;
 }
 
 
+//media query gestion responsive
+@media (max-width: 750px) {
+    .single-container{
+        flex-direction:column-reverse;
+        align-items: center;
+    }
 
+    .container__mini{
+        display: none;
+    }
+    .container__contact{
+        flex-direction: column;
+        align-items: center;
+    }
+    #myBtn {
+       margin:0px
+    }
+    .container{
+        border-top: 1px solid black;
+        flex-direction: column;
+        align-items: center;
+    }
+    #column1,#column2{
+        width: 70%;
+        border: none;
+    }
+    .container-categorie{
+        align-items: center;
+    
+    }
+    .photo-like{
+        flex-wrap:wrap ;
+    }
+    .photo-container {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+
+    header{
+        box-shadow:0 8px 12px rgba(0, 0, 0, 0.1); /* La propriété box-shadow ajoute une ombre à la partie inférieure */ ;
+      }
+  
+}

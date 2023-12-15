@@ -46,17 +46,17 @@ window.onclick = function(event) {
 
 //gestion image suivante-précédente
 
-function showDiv1() {
-    var hiddenDiv = document.getElementById('img-precedent');
-    hiddenDiv.style.transition = 'opacity 0.3s ease-in-out';
-    hiddenDiv.style.opacity = '1';
-}
+// function showDiv1() {
+//     var hiddenDiv = document.getElementById('img-precedent');
+//     hiddenDiv.style.transition = 'opacity 0.3s ease-in-out';
+//     hiddenDiv.style.opacity = '1';
+// }
 
-function hideDiv1() {
-    var hiddenDiv = document.getElementById('img-precedent');
-    hiddenDiv.style.transition = 'opacity 0.3s ease-in-out';
-    hiddenDiv.style.opacity = '0';
-}
+// function hideDiv1() {
+//     var hiddenDiv = document.getElementById('img-precedent');
+//     hiddenDiv.style.transition = 'opacity 0.3s ease-in-out';
+//     hiddenDiv.style.opacity = '0';
+// }
 
 function showDiv2() {
     var hiddenDiv = document.getElementById('img-suivant');

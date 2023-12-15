@@ -17,22 +17,18 @@
     width: 50%;
     position: relative;
     overflow: hidden;
+    margin-right: 10px;
 }
 
-.photo-content img {
-    width: 100%; /* Assurez-vous que l'image occupe toute la largeur de son conteneur */
-    height: auto; /* Pour maintenir les proportions de l'image */
-}
+.photo-content{
+    width:100%;
+    height: 500px;
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Couleur d'arrière-plan semi-transparente noire */
-    opacity: 0; /* Initialement invisible */
-    transition: opacity 0.3s ease; /* Ajoute une transition pour une animation fluide */
+    img {
+        height:100%;
+        width:100%;
+        object-fit: cover;      
+     }
 }
 
 .photo-container:hover .overlay {

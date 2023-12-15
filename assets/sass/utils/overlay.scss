@@ -1,31 +1,52 @@
 .overlay{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Couleur d'arrière-plan semi-transparente noire */
+    opacity: 0; /* Initialement invisible */
+    transition: opacity 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     color: white;
-    font-size: 1.5em;
+    font-size: 1em;
 
     & a{
         color: white;
     }
 
-    & i{
+    & img{
         transition: transform 0.3s ease; 
     }
 
-    &  i:hover {
+    & img:hover {
         transform: scale(1.2); /* Échelle au survol */
     }
 }
 
-
-
-.icon-full{
-    text-align: right;
-    padding-right: 10px;
+.container_icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
 
-.icon-eye{
-    text-align:center;
+.icon_full{
+    width: 5%;
+    margin-top: 10px;
+    margin-right: 10px;
 }
+
+.icon_eye{
+    width: 60%;
+    margin:auto;
+}
+
+.lien-photo{
+    display:block;
+    margin: auto;
+}
+
 

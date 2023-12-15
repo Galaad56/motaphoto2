@@ -55,8 +55,10 @@
                 <button class="btn" id="myBtn">Contact</button>
 
             </div>
-            <div class="container__fleche">
+            <div class="container__mini">
                 <!--  Miniature de la photo précédente   -->
+                
+                
                 <div id="img-precedent">
                     <?php  
                     
@@ -75,22 +77,23 @@
                         echo get_the_post_thumbnail($next_post->ID, 'thumbnail');
                         echo '</a>';
                     endif;?>
-            </div> 
-        
-            <?php
+                </div> 
+                <div class="container__fleche">
+                    <?php
                     if ($prev_post) :
                         echo '<a href="' . get_permalink($prev_post->ID) . '" title="' . esc_attr($prev_post->post_title) . '">';?>
                         <img class="container__fleche__precedent"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/Line 6.png';?>" alt='logo' onmouseover="showDiv1()" onmouseout="hideDiv1()">
                         <?php 
                         echo '</a>';
                     endif; ?>
-                <?php
+                    <?php
                     if ($next_post) :
                         echo '<a href="' . get_permalink($next_post->ID) . '" title="' . esc_attr($next_post->post_title) . '">';?>
                         <img class="container__fleche__suivant"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/line 7.png';?>" alt='logo'onmouseover="showDiv2()" onmouseout="hideDiv2()">
                         <?php 
                         echo '</a>';
-                    endif; ?>   
+                    endif; ?>  
+                </div> 
             </div>
         </div>
         <?php get_template_part('assets/templates_parts/photo-block');?>

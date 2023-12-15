@@ -168,8 +168,10 @@ body{
   }
   
 
-//media query gestion menu moblie
-  @media (max-width: 600px) {
+
+
+//media query gestion menu mobile
+  @media (max-width: 750px) {
     .menu-box__nav{
       display:none;
     }
