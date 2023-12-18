@@ -4,6 +4,7 @@
         
        <?php
        get_template_part('assets/templates_parts/modale');
+       get_template_part('assets/templates_parts/lightbox');
 
       // Afficher le menu
           wp_nav_menu(array(
