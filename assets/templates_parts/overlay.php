@@ -1,10 +1,10 @@
 <div class="photo-container">
                         <div class="photo-content">
-                            <?php the_post_thumbnail('large'); ?>
+                            <?php the_post_thumbnail('large',['class' => 'img-overlay']); ?>
                         </div>
                         <div class="overlay">
                            <div class="container_icon">
-                                <img class="icon_full"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/icon_fullscreen.png';?>" alt='full sreen'>
+                           <img class="icon_full" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/icon_fullscreen.png';?>" alt='full sreen' data-reference="<?php echo get_post_meta(get_the_ID(), 'reference', true); ?>" >
                             </div>
                             <a class="lien-photo" href=" <?php the_permalink(); ?>" >
                                 <img class="icon_eye"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/icon_eye.png';?>" alt='zoom'>

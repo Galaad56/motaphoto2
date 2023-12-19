@@ -1,12 +1,15 @@
 <!-- lightbox -->
-<div id="custom-lightbox" class="custom-lightbox" style="display: none;">
+<div id="custom-lightbox" class="custom-lightbox">
     <div class="lightbox-content">
-        
-        <span class="lightbox-prev" onclick="showImage(-1)">Précédente</span>
+
+        <p class="lightbox-prev" onclick="showImage(-1)">Précédente<p>
         <img src="" alt="" id="lightbox-img">
-        <div class="lightbox-category" >
-            <p id="lightbox-category" class="lightbox-category"></p>
+        
+        <p class="lightbox-next" onclick="showImage(1)">Suivante</p>
+
+        <div class="img-infos">
+            <p id="lightbox-reference" class="light-reference"></p>
+            <p id="lightbox-category" class="light-category"></p>
         </div>
-        <span class="lightbox-next" onclick="showImage(1)">Suivante</span>
     </div>
 </div>

@@ -1,6 +1,4 @@
-//gestion ouverture menu
 
-console.log ("test menu");
 
 //const burgerMenu = document.querySelector('.burger-menu');
 const burgerMenu = document.getElementById('test-burger');
