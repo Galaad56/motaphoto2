@@ -595,4 +595,8 @@ input {
   margin: 0 auto;
 }
 
+.lightbox-prev {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=theme.css.map */

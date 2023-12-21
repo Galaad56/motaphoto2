@@ -14,7 +14,10 @@ add_action('wp_enqueue_scripts', 'ajouter_script_custom');
     //script menu burger
     wp_enqueue_script('script-menu', get_stylesheet_directory_uri() . '/assets/js/script_menu.js', array(), filemtime(get_stylesheet_directory() . '/assets/js/script_menu.js'),true);
     // script lightbox
-    wp_enqueue_script('script-lightbox', get_stylesheet_directory_uri() . '/assets/js/script_lightbox.js', array(), filemtime(get_stylesheet_directory() . '/assets/js/script_lightbox.js'),true);
+    wp_enqueue_script('script-lightbox', get_stylesheet_directory_uri() . '/assets/js/script_lightbox3.js', array(), filemtime(get_stylesheet_directory() . '/assets/js/script_lightbox3.js'),true);
+   //script charger plus
+    wp_enqueue_script('script-charger', get_stylesheet_directory_uri() . '/assets/js/load_more.js', array(), filemtime(get_stylesheet_directory() . '/assets/js/load_more.js'),true);
+    wp_localize_script('script-charger', 'ajaxurl', admin_url('admin-ajax.php'));
 }
 
 
@@ -30,3 +33,30 @@ function mytheme_register_nav_menu(){
 }
 add_action( 'after_setup_theme', 'mytheme_register_nav_menu', 0 );
 
+// charger plus
+function load_more_photos() {
+    $page = $_POST['page'];
+
+    $args = array(
+        'post_type' => 'photo',
+        'posts_per_page' => 8,
+        'paged' => $page,
+    );
+
+    $photo_query = new WP_Query($args);
+
+    if ($photo_query->have_posts()) :
+        while ($photo_query->have_posts()) : $photo_query->the_post();
+            // Utilisez get_template_part pour inclure le contenu du template overlay
+            get_template_part('assets/templates_parts/overlay');
+        endwhile;
+        wp_reset_postdata();
+    else :
+        echo 'No more photos';
+    endif;
+
+    wp_die(); // Terminez correctement la requête Ajax
+}
+
+add_action('wp_ajax_load_more_photos', 'load_more_photos');
+add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');

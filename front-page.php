@@ -30,7 +30,7 @@
         <?php
                     $args = array(
                         'post_type' => 'photo',
-                        'posts_per_page' => -1,
+                        'posts_per_page' => 8,
 
                     );
                     $photo_query = new WP_Query($args);
@@ -42,25 +42,13 @@
 
 
         <?php get_template_part('assets/templates_parts/overlay');    ?>
-        <!-- <a href=" <?php the_permalink(); ?>" >
-                <div id="post-<?php the_ID(); ?>" >
-                    <div class="column">
-                        <h1><?php the_title(); ?></h1>
-                    </div>
-                    <div class="column">
-                        <?php
-                        // Afficher l'image à la une du post
-                        if (has_post_thumbnail()) {
-                            the_post_thumbnail('thumbnail');
-                        }
-                        ?>
-                    </div>
-                </div>
-        </a> -->
+        
             <?php endwhile;
         endif;?>
 
 </section>
 <button class="btn" id="myBtn">Contact</button>
+<button class="btn" id="load-more">Charger plus</button>
+<button class="btn" id="load-lightbox">lightbox</button>
 
 <?php get_footer(); ?>

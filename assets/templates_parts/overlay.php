@@ -1,6 +1,6 @@
 <div class="photo-container">
                         <div class="photo-content">
-                            <?php the_post_thumbnail('large',['class' => 'img-overlay']); ?>
+                            <?php the_post_thumbnail('full',['class' => 'img-overlay']); ?>
                         </div>
                         <div class="overlay">
                            <div class="container_icon">
