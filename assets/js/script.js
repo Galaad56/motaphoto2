@@ -2,6 +2,7 @@ console.log("test modale");
 
 // Gestion modale the modal
 var modal = document.getElementById('myModal');
+console.log(modal)
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -20,10 +21,14 @@ var refPhotoField = document.getElementById("RefPhoto");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
 
-   refPhotoField.value = referenceParagraph;
-   modal.style.display = "block";
+
+if (btn) {
+    btn.onclick = function() {
+        console.log(modal)
+        refPhotoField.value = referenceParagraph;
+        modal.style.display = "block";
+    }
 }
 
 link.addEventListener("click",(e)=>{

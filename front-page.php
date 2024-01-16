@@ -25,12 +25,44 @@
     ?>
     <h2>Photographe Event</h2>
   </section>
+  <section class="filters">
+    <div>    
+        <select id="category-filter">
+            <option value="all">Catégories</option>
+            <?php
+            $categories = get_categories(array('taxonomy' => 'category', 'hide_empty' => false));
+            foreach ($categories as $category) {
+                echo '<option value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</option>';
+            }
+            ?>
+        </select>
+
+        <select id="format-filter">
+            <option value="all">Formats</option>
+            <?php
+            $formats = get_terms(array('taxonomy' => 'format', 'hide_empty' => false));
+            foreach ($formats as $format) {
+                echo '<option value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</option>';
+            }
+            ?>
+        </select>
+    </div>
+    <select id="date-filter">
+        <option>Trier par</option>
+        <option>De la plus récente à la plus ancienne</option>
+        <option>De la plus ancienne à la plus récente</option>    
+    </select>    
+
+
+</section>
+
+
 <section class="photo-liste">
 
         <?php
                     $args = array(
                         'post_type' => 'photo',
-                        'posts_per_page' => 8,
+                        'posts_per_page' => 12,
 
                     );
                     $photo_query = new WP_Query($args);
@@ -45,10 +77,9 @@
         
             <?php endwhile;
         endif;?>
-
+    <button class="btn" id="load-more">Charger plus</button>
 </section>
-<button class="btn" id="myBtn">Contact</button>
-<button class="btn" id="load-more">Charger plus</button>
-<button class="btn" id="load-lightbox">lightbox</button>
+
+
 
 <?php get_footer(); ?>

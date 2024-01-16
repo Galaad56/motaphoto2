@@ -4,6 +4,8 @@ jQuery(document).ready(function($) {
 
     // Fonction pour charger plus de photos
     function loadMorePhotos() {
+
+
         var data = {
             action: 'load_more_photos',
             page: page,
@@ -14,29 +16,40 @@ jQuery(document).ready(function($) {
             type: 'post',
             data: data,
             success: function(response) {
-                // Insérez les nouvelles photos dans votre conteneur
+                // Insérez les nouvelles photos dans le conteneur
                 $('.photo-liste').append(response);
                 page++; // Incrémentez le numéro de page pour la prochaine requête
 
-                 // Réappliquez la lightbox pour les nouvelles images
+                
+                 // Recharger la liste des icon_full complete
+                  icons =  document.querySelectorAll('.icon_full');
+                  console.log('icons',icons);
 
-                  lightbox()
+                  icons.forEach(function(icon, index) {
+                    icon.addEventListener('click', function(event) { 
+                        event.preventDefault();
+                        currentIndex = index;
+                        lightbox2()
+                        showImage(0);
+                        document.getElementById('custom-lightbox').style.display = 'block';
+                    });
+                }
+                );
+
     
-                // Vérifiez s'il y a plus de photos à charger
+                // Vérifiez s'il y a encore de photos à charger
             if ($(response).filter('.photo-item').length === 0) {
-                // Aucune nouvelle photo à charger, masquez le bouton "Load More"
+                // Aucune nouvelle photo à charger, masquer le bouton "Load More"
              $('#load-more').hide();
             }
         },
     });
 }
-    // Gérez le clic sur le bouton "Load More"
+    // Gérer le clic sur le bouton "Load More"
     $('#load-more').on('click', function() {
         loadMorePhotos();
     });   
 
 });
-
-
 
     
