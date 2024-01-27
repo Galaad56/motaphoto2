@@ -62,10 +62,10 @@ body {
 .menu-box__nav a {
   text-decoration: none;
   color: black;
-  transition: text-shadow 1s ease;
+  transition: font-weight 0.5s ease-in-out;
 }
 .menu-box__nav a:hover {
-  text-shadow: 0 0 10px rgba(235, 14, 14, 0.9);
+  font-weight: bold;
 }
 
 #burger {
@@ -191,25 +191,24 @@ body {
 }
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto; /* 15% du et  centré */
   padding: 0px 20px 20px 20px;
   border: 4px solid black;
-  width: 350px; /* Could be more or less, depending on screen size */
+  width: 350px;
   overflow: hidden;
 }
 
@@ -441,6 +440,11 @@ input {
 .photo-like {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.photo-like > div:first-child {
+  margin-right: 10px;
 }
 
 .single-photo {
@@ -575,32 +579,18 @@ input {
   height: 100%;
 }
 
+.load-more-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+}
+
 #load-more {
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
-}
-
-.filters {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 90%;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
-
-select {
-  height: 43px;
-  width: 260px;
-  border: solid 1px #c4c4c4;
-  border-radius: 10px;
-  font-size: medium;
-  font-weight: 500;
-  padding-left: 10px;
-  padding-right: 20px;
 }
 
 @media (max-width: 750px) {
@@ -708,6 +698,95 @@ select {
   .lightbox-prev, .lightbox-next {
     margin: 0;
   }
+}
+.dropdown {
+  background-color: white;
+  font-family: "Arial", sans-serif;
+}
+.dropdown__switch:checked + .dropdown__options-filter .dropdown__select {
+  transform: scaleY(1);
+}
+.dropdown__switch:checked + .dropdown__options-filter .dropdown__filter:after {
+  transform: rotate(-135deg);
+}
+.dropdown__options-filter {
+  width: 100%;
+  cursor: pointer;
+}
+.dropdown__filter {
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  width: 270px;
+  height: 50px;
+  padding-top: 12px;
+  padding-left: 10px;
+  background-color: #fff;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.dropdown__filter:focus {
+  outline: none;
+}
+.dropdown__filter::after {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #595959;
+  border-bottom: 2px solid #595959;
+  transform: rotate(45deg) translateX(-45%);
+  transition: 0.2s ease-in-out;
+}
+.dropdown__select {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  padding: 0px;
+  overflow: hidden;
+  transform: scaleY(0);
+  transform-origin: top;
+  font-weight: 300;
+  transition: 0.2s ease-in-out;
+}
+.dropdown__select-option {
+  padding: 10px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.dropdown__select-option:hover {
+  background-color: red;
+}
+
+ul {
+  list-style-type: none;
+  z-index: 999;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.filters-gauche {
+  display: flex;
+  flex-direction: row;
+}
+
+.filters-gauche > div:first-child {
+  margin-right: 15px;
 }
 
 /*# sourceMappingURL=theme.css.map */

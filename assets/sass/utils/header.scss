@@ -1,4 +1,4 @@
-        // keyframes rotation menu burger
+// keyframes rotation menu burger
         @keyframes rotate {
           0% {
               transform: rotate(0deg);
@@ -37,7 +37,7 @@
           }
         }
 
-     //fade in sur menu
+//fade in sur menu
      @keyframes anime-menu {
       from {
         opacity: 0;
@@ -58,9 +58,7 @@ body{
     justify-content:space-between;
     width: 80%;
     margin:auto;
-    //background-color: aqua;
-  
-
+    
     &__logo{
         width: 250px;
         height: 16px;
@@ -74,11 +72,13 @@ body{
     &__nav a{
         text-decoration: none;
         color:black;
-        transition: text-shadow 1s ease;
+        //transition: text-shadow 1s ease;
+        transition: font-weight 0.5s ease-in-out;
     }
 
     &__nav a:hover{
-      text-shadow: 0 0 10px rgba(235, 14, 14, 0.9);
+      font-weight: bold;
+      //text-shadow: 0 0 10px rgba(235, 14, 14, 0.9);
   }
 }
 
@@ -167,8 +167,6 @@ body{
     display: block;
   }
   
-
-
 
 //media query gestion menu mobile
   @media (max-width: 750px) {

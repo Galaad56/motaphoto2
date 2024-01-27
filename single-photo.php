@@ -7,28 +7,28 @@
                 <h2 class="titre_photo"><?php the_title(); ?></h2>
                 <p id="reference">Référence: <span id="reference_span"> <?php echo get_post_meta(get_the_ID(), 'reference', true); ?></span></p>
                 <?php
-                // Récupérez les termes de la taxonomie "categorie" associés à l'article
+                // Récupérer les termes de la taxonomie "categorie" associés à l'article
                 $cats = get_the_terms(get_the_ID(), 'category');
 
-                // Vérifiez si des termes existent
+                // Vérifier si des termes existent
                 if ($cats && !is_wp_error($cats)) {
                     echo '<p>categorie : ';
 
-                    // Parcourez les termes et affichez-les
+                    // Parcourer les termes et affichez-les
                     foreach ($cats as $cat) {
-                        echo esc_html($cat->name); // Utilisez esc_html pour échapper le contenu
+                        echo esc_html($cat->name); // Utiliser esc_html pour échapper le contenu
                 }
                 echo '</p>';
                 }?>
                 <?php
-                // Récupérez les termes de la taxonomie "format" associés à l'article
+                // Récupérer les termes de la taxonomie "format" associés à l'article
                 $formats = get_the_terms(get_the_ID(), 'format');
 
-                // Vérifiez si des termes existent
+                // Vérifier si des termes existent
                 if ($formats && !is_wp_error($formats)) {
                     echo '<p>Format : ';
 
-                    // Parcourez les termes et affichez-les
+                    // Parcourer les termes et affichez-les
                     foreach ($formats as $format) {
                         echo esc_html($format->name); // Utilisez esc_html pour échapper le contenu
                 }

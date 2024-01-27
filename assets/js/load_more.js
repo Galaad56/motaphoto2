@@ -20,23 +20,11 @@ jQuery(document).ready(function($) {
                 $('.photo-liste').append(response);
                 page++; // Incrémentez le numéro de page pour la prochaine requête
 
-                
+
                  // Recharger la liste des icon_full complete
-                  icons =  document.querySelectorAll('.icon_full');
-                  console.log('icons',icons);
+                icons =  document.querySelectorAll('.icon_full');
+                open_lightbox();
 
-                  icons.forEach(function(icon, index) {
-                    icon.addEventListener('click', function(event) { 
-                        event.preventDefault();
-                        currentIndex = index;
-                        lightbox2()
-                        showImage(0);
-                        document.getElementById('custom-lightbox').style.display = 'block';
-                    });
-                }
-                );
-
-    
                 // Vérifiez s'il y a encore de photos à charger
             if ($(response).filter('.photo-item').length === 0) {
                 // Aucune nouvelle photo à charger, masquer le bouton "Load More"

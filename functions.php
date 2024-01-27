@@ -9,6 +9,8 @@ function theme_enqueue_styles() {
 
 add_action('wp_enqueue_scripts', 'ajouter_script_custom');
  function ajouter_script_custom() {
+    // Enqueue jQuery
+    wp_enqueue_script('jquery');
     //  script.js theme perso
     wp_enqueue_script('mon-scriptjs', get_stylesheet_directory_uri() . '/assets/js/script.js', array(), filemtime(get_stylesheet_directory() . '/assets/js/script.js'),true);
     //script menu burger
@@ -21,8 +23,8 @@ add_action('wp_enqueue_scripts', 'ajouter_script_custom');
     //script filtres
     wp_enqueue_script('script-filtres', get_stylesheet_directory_uri() . '/assets/js/filtres.js', array(), filemtime(get_stylesheet_directory() . '/assets/js/filtres.js'),true);
     wp_localize_script('script-filtres', 'frontendajax', array('ajaxurl' => admin_url('admin-ajax.php')));
+    
 }
-
 
 
 // gestion location menus
@@ -50,15 +52,15 @@ function load_more_photos() {
 
     if ($photo_query->have_posts()) :
         while ($photo_query->have_posts()) : $photo_query->the_post();
-            // Utilisez get_template_part pour inclure le contenu du template overlay
+            // onclure le contenu du template overlay
             get_template_part('assets/templates_parts/overlay');
         endwhile;
         wp_reset_postdata();
     else :
-        echo 'No more photos';
+        echo 'toutes les photos sont affichées';
     endif;
 
-    wp_die(); // Terminez correctement la requête Ajax
+    wp_die(); // Terminer la requête Ajax
 }
 
 add_action('wp_ajax_load_more_photos', 'load_more_photos');
@@ -66,7 +68,7 @@ add_action('wp_ajax_nopriv_load_more_photos', 'load_more_photos');
 
 //fonction filtres
 
-    // Enregistrez l'action WordPress pour la requête AJAX
+    // action WordPress pour la requête AJAX
 add_action('wp_ajax_filter_photos', 'filter_photos');
 add_action('wp_ajax_nopriv_filter_photos', 'filter_photos'); // Pour les utilisateurs non connectés
 
@@ -77,12 +79,12 @@ function filter_photos()
     $date_order = $_POST['date_order'];
 
 
-    // Construisez vos arguments de requête personnalisée ici en fonction des filtres
+    // arguments de requête personnalisée ici en fonction des filtres
 
     $args = array(
         'post_type' => 'photo',
-        'posts_per_page' => 12,
-        // Ajoutez d'autres arguments selon les filtres sélectionnés
+        'posts_per_page' => -1,
+        // d'autres arguments selon les filtres sélectionnés
     );
 
     if ($category !== 'all') {
@@ -118,7 +120,7 @@ function filter_photos()
     // Boucle WordPress pour récupérer les données du custom post type
     if ($photo_query->have_posts()) :
         while ($photo_query->have_posts()) : $photo_query->the_post();
-            // Incluez le template pour chaque photo
+            //  template pour chaque photo
             get_template_part('assets/templates_parts/overlay');
         endwhile;
 
@@ -127,5 +129,5 @@ function filter_photos()
     wp_reset_postdata();
 
    
-    die(); // Arrêtez l'exécution après l'envoi des données
+    die(); // Arrêter l'exécution après l'envoi des données
 }

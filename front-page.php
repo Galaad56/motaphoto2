@@ -24,39 +24,81 @@
         endif;
     ?>
     <h2>Photographe Event</h2>
-  </section>
-  <section class="filters">
-    <div>    
-        <select id="category-filter">
-            <option value="all">Catégories</option>
-            <?php
-            $categories = get_categories(array('taxonomy' => 'category', 'hide_empty' => false));
-            foreach ($categories as $category) {
-                echo '<option value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</option>';
-            }
-            ?>
-        </select>
-
-        <select id="format-filter">
-            <option value="all">Formats</option>
-            <?php
-            $formats = get_terms(array('taxonomy' => 'format', 'hide_empty' => false));
-            foreach ($formats as $format) {
-                echo '<option value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</option>';
-            }
-            ?>
-        </select>
-    </div>
-    <select id="date-filter">
-        <option>Trier par</option>
-        <option>De la plus récente à la plus ancienne</option>
-        <option>De la plus ancienne à la plus récente</option>    
-    </select>    
-
-
 </section>
-
-
+<section class="filters">
+        <div class="filters-gauche">
+            <div class="dropdown">
+                <input type="checkbox" class="dropdown__switch" id="filter-switch" hidden />
+                <label id="label-switch" for="filter-switch" class="dropdown__options-filter">
+                    <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                        <li id="categorie-selected" class="dropdown__filter-selected" aria-selected="true" data-value="all">
+                            Catégories
+                        </li>
+                        <li>
+                            <ul class="dropdown__select">
+                                <li class="dropdown__select-option select-categorie" role="option" data-value="all">
+                                Toutes les catégories
+                                </li>
+                                
+                                <?php
+                                    $categories = get_categories(array('taxonomy' => 'category', 'hide_empty' => false));
+                                    foreach ($categories as $category) {
+                                        echo '<li class="dropdown__select-option select-categorie" role="option" data-value="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</li>';
+                                    }
+                                ?>
+                                
+                            </ul>
+                        </li>
+                    </ul>			
+                </label>
+            </div>
+            <div class="dropdown">
+                <input type="checkbox" class="dropdown__switch" id="format-switch" hidden />
+                <label id="label-switch" for="format-switch" class="dropdown__options-filter">
+                    <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                        <li id="format-selected" class="dropdown__filter-selected" aria-selected="true" data-value="all">
+                            Formats
+                        </li>
+                        <li>
+                            <ul class="dropdown__select">
+                                <li class="dropdown__select-option select-format" role="option" data-value="all">
+                                    Tous formats
+                                </li>
+                                
+                                <?php
+                                    $formats = get_terms(array('taxonomy' => 'format', 'hide_empty' => false));
+                                    foreach ($formats as $format) {
+                                        echo '<option class="dropdown__select-option select-format" role="option" data-value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</option>';
+                                    }
+                                ?>
+                            </ul>
+                        </li>
+                    </ul>			
+                </label>
+            </div>
+        </div>
+        <div class="dropdown">
+                <input type="checkbox" class="dropdown__switch" id="date-switch" hidden />
+                <label id="label-switch" for="date-switch" class="dropdown__options-filter">
+                    <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                        <li id="date-selected" class="dropdown__filter-selected" aria-selected="true" data-value="all">
+                            Trier par
+                        </li>
+                        <li>
+                            <ul class="dropdown__select">
+                                <li class="dropdown__select-option select-date" role="option" data-value="De la plus récente à la plus ancienne" >
+                                    De la plus récente à la plus ancienne
+                                </li>
+                                <li class="dropdown__select-option select-date" role="option" data-value="De la plus ancienne à la plus récente" >
+                                    De la plus ancienne à la plus récente
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>			
+                </label>
+            </div>
+</section>
+  
 <section class="photo-liste">
 
         <?php
@@ -77,8 +119,12 @@
         
             <?php endwhile;
         endif;?>
+    
+</section>
+<section class=load-more-container>
     <button class="btn" id="load-more">Charger plus</button>
 </section>
+
 
 
 

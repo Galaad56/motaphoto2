@@ -9,7 +9,7 @@ const infos = [];
 
 let icons =  document.querySelectorAll('.icon_full');
 
- //fobnction affichage dans la lightbox   
+ //fonction affichage dans la lightbox   
   function showImage(offset) {
            
     currentIndex = (currentIndex + offset + photos.length) % photos.length;
@@ -46,7 +46,7 @@ let icons =  document.querySelectorAll('.icon_full');
         vignettes.forEach(function (vignette) {
             //console.log (vignette)
             photos.push({
-                src: vignette.dataset.src,
+                src: vignette.dataset.src || vignette.getAttribute('src'),
             });
         });
 
@@ -72,47 +72,6 @@ let icons =  document.querySelectorAll('.icon_full');
 
   }
 
-  //fontion remplissage des tableaux photos src et infos pages load more te filtres
-  function lightbox2(){      
-    
-        
-        //RaZ tableaux    
-        photos.splice(0, photos.length);
-        infos.splice(0, infos.length);
-
-
-        // Sélectionnez tous les images
-        const vignettes = document.querySelectorAll('.img-overlay');
-
-        // Remplissez le tableau avec les informations nécessaires
-        vignettes.forEach(function (vignette) {
-            console.log (vignette)
-            photos.push({
-                src: vignette.getAttribute('src'),
-            });
-        });
-
-        console.log("photos",photos);
-
-     
-        // Sélectionnez tous les conteneurs de miniature
-        const ThumbContainer = document.querySelectorAll('.photo-container');
-
-        // Remplissez le tableau avec les informations nécessaires
-        ThumbContainer.forEach(function (container, index) {
-            category = container.querySelector('.infos-photo p:last-child').textContent.trim();
-            reference = container.querySelector('.infos-photo #reference_span').textContent.trim();
-
-            infos.push({
-            category: category,
-            reference: reference
-            });
-        });
-
-        console.log("infos",infos);
-
-
-  }
 
   // Gestionnaire d'événement pour fermer la lightbox en appuyant sur la touche Échap
     document.addEventListener('keydown', function (e) {
@@ -121,20 +80,22 @@ let icons =  document.querySelectorAll('.icon_full');
     }
    }); 
 
-    // Gestionnaire d'événement pour ouvrir la lightbox au clic sur l'icône
-    
-    console.log('icons',icons);
+    // fonction pour ouvrir la lightbox au clic sur l'icône
+    open_lightbox()
+    function open_lightbox() {
+        console.log('icons',icons);
 
-    icons.forEach(function(icon, index) {
-        icon.addEventListener('click', function(event) {
-            event.preventDefault();
-            currentIndex = index;
-            lightbox()
-            showImage(0);
-            document.getElementById('custom-lightbox').style.display = 'block';
-        });
+        icons.forEach(function(icon, index) {
+            icon.addEventListener('click', function(event) {
+                event.preventDefault();
+                currentIndex = index;
+                lightbox()
+                showImage(0);
+                document.getElementById('custom-lightbox').style.display = 'block';
+            });
+        }
+        );
     }
-    );
 
    // Gestionnaire d'événement pour clic sur suivante
    var next_btn =  document.getElementById('next_btn');
